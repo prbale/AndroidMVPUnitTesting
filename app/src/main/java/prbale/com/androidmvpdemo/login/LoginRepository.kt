@@ -1,6 +1,6 @@
-package prbale.com.androidmvpdemo.login;
+package prbale.com.androidmvpdemo.login
 
-public class LoginRepository implements LoginContract.Repository {
+class LoginRepository : LoginContract.Repository {
   /**
    * Repository method for login. Ideally from here we should make a request to backend
    * for login process. But for this demo, we will have some mock check inline.
@@ -8,7 +8,7 @@ public class LoginRepository implements LoginContract.Repository {
    * @param password password to validate
    * @return true is credentials matches with the "test/test" else false.
    */
-  @Override public boolean login(String username, String password) {
-    return "prashant".equals(username) && "bale".equals(password);
-  }
+  override fun login(username: String, password: String): Boolean =
+    "prashant" == username && "bale" == password
+
 }
