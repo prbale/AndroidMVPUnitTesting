@@ -26,7 +26,6 @@ class LoginPresenterTest {
   }
 
   @Test
-  @Throws(Exception::class)
   fun shouldShowErrorMessageWhenUsernameIsEmpty() {
     `when`(view?.getUsername()).thenReturn("")
     presenter.doLogin()
@@ -42,7 +41,6 @@ class LoginPresenterTest {
   }
 
   @Test
-  @Throws(Exception::class)
   fun shouldStartMainActivityWhenUsernameAndPasswordAreCorrect() {
     `when`(view?.getUsername()).thenReturn("prashant")
     `when`(view?.getPassword()).thenReturn("bale")
