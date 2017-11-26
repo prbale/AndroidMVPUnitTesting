@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
   @Override
   public void showUsernameError() {
-    usernameView.setError(getString(R.string.username_error));
+    usernameView.setError(getString(R.string.error_msg_username_missing));
   }
 
   @Override
@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
   @Override
   public void showPasswordError() {
-    passwordView.setError(getString(R.string.password_error));
+    passwordView.setError(getString(R.string.error_msg_password_missing));
   }
 
   @Override
@@ -60,6 +60,6 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
   @Override
   public void showLoginError() {
-    Toast.makeText(this, getString(R.string.login_failed), LENGTH_SHORT).show();
+    Toast.makeText(this, getString(R.string.error_msg_login_failed), LENGTH_SHORT).show();
   }
 }

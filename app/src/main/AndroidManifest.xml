@@ -17,8 +17,7 @@
       </intent-filter>
     </activity>
     <activity
-        android:name=".home.HomeActivity"
-        android:label="@string/main"/>
+        android:name=".home.HomeActivity"/>
   </application>
 
 </manifest>
