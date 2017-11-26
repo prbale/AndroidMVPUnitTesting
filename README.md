@@ -1,4 +1,4 @@
-# Android MVP Unit Testing
+# Android Kotlin MVP Unit Testing
 This project demonstrate the basic unit testing for MVP architecture.
 
 1. Added a login screen which will take user name and password.
