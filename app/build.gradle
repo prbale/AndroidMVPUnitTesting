@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "21.1.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "vj.com.androidmvpsample"
+        applicationId "prbale.com.androidmvpdemo"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1

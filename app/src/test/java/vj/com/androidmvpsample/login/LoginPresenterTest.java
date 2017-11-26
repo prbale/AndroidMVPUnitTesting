@@ -1,4 +1,4 @@
-package vj.com.androidmvpsample.login;
+package prbale.com.androidmvpdemo.login;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import vj.com.androidmvpsample.R;
+import prbale.com.androidmvpdemo.R;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -17,9 +17,9 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class LoginPresenterTest {
   @Mock
-  private LoginView view;
+  private LoginContract view;
   @Mock
-  private LoginService service;
+  private LoginRepository service;
   private LoginPresenter presenter;
 
   @Before
