@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
   }
 
   public void onLoginClicked(View view) {
-    presenter.onLoginClicked();
+    presenter.doLogin();
   }
 
   @Override
@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
   }
 
   @Override
-  public void showUsernameError(int resId) {
-    usernameView.setError(getString(resId));
+  public void showUsernameError() {
+    usernameView.setError(getString(R.string.username_error));
   }
 
   @Override
@@ -49,8 +49,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
   }
 
   @Override
-  public void showPasswordError(int resId) {
-    passwordView.setError(getString(resId));
+  public void showPasswordError() {
+    passwordView.setError(getString(R.string.password_error));
   }
 
   @Override
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
   }
 
   @Override
-  public void showLoginError(int resId) {
-    Toast.makeText(this, getString(resId), LENGTH_SHORT).show();
+  public void showLoginError() {
+    Toast.makeText(this, getString(R.string.login_failed), LENGTH_SHORT).show();
   }
 }

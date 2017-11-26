@@ -30,7 +30,7 @@ public class LoginPresenterTest {
   @Test
   public void shouldShowErrorMessageWhenUsernameIsEmpty() throws Exception {
     when(view.getUsername()).thenReturn("");
-    presenter.onLoginClicked();
+    presenter.doLogin();
 
     verify(view).showUsernameError(R.string.username_error);
   }
@@ -39,7 +39,7 @@ public class LoginPresenterTest {
   public void shouldShowErrorMessageWhenPasswordIsEmpty() throws Exception {
     when(view.getUsername()).thenReturn("james");
     when(view.getPassword()).thenReturn("");
-    presenter.onLoginClicked();
+    presenter.doLogin();
 
     verify(view).showPasswordError(R.string.password_error);
   }
@@ -49,7 +49,7 @@ public class LoginPresenterTest {
     when(view.getUsername()).thenReturn("james");
     when(view.getPassword()).thenReturn("bond");
     when(service.login("james", "bond")).thenReturn(true);
-    presenter.onLoginClicked();
+    presenter.doLogin();
 
     verify(view).startMainActivity();
   }
@@ -59,7 +59,7 @@ public class LoginPresenterTest {
     when(view.getUsername()).thenReturn("james");
     when(view.getPassword()).thenReturn("bond");
     when(service.login("james", "bond")).thenReturn(false);
-    presenter.onLoginClicked();
+    presenter.doLogin();
 
     verify(view).showLoginError(R.string.login_failed);
   }

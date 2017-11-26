@@ -5,16 +5,16 @@ public interface LoginContract {
   // View Interface
   interface View {
     String getUsername();
-    void showUsernameError(int resId);
+    void showUsernameError();
     String getPassword();
-    void showPasswordError(int resId);
+    void showPasswordError();
     void startMainActivity();
-    void showLoginError(int resId);
+    void showLoginError();
   }
 
   // Presenter / Presentation Interface
   interface Presenter {
-    void onLoginClicked();
+    void doLogin();
   }
 
   // Model - Business Logic Interface

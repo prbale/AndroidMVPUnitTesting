@@ -6,6 +6,7 @@ import android.content.Intent;
 import prbale.com.androidmvpdemo.home.HomeActivity;
 
 public class ActivityUtil {
+
   private Context context;
 
   public ActivityUtil(Context context) {

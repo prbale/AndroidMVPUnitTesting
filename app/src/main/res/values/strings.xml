@@ -1,14 +1,15 @@
 <resources>
-  <string name="app_name">AndroidMVPSample</string>
+  <!-- Application name -->
+  <string name="app_name">AndroidMVPDemo</string>
 
-  <string name="hello_world">Hello world!</string>
-  <string name="action_settings">Settings</string>
+  <!-- Labels -->
   <string name="username">Username</string>
   <string name="password">Password</string>
   <string name="login">Login</string>
-  <string name="login_failed">Login failed.</string>
-  <string name="username_error">Enter username</string>
-  <string name="password_error">Enter password</string>
-  <string name="success_message">You\'ve Successfully Logged In!!</string>
-  <string name="main">Main</string>
+
+  <!-- Messages -->
+  <string name="error_msg_login_failed">Login failed.</string>
+  <string name="error_msg_username_missing">Enter username</string>
+  <string name="error_msg_password_missing">Enter password</string>
+  <string name="success_msg">You\'ve Successfully Logged In!!</string>
 </resources>

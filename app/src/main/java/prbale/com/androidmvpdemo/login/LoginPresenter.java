@@ -1,25 +1,32 @@
 package prbale.com.androidmvpdemo.login;
 
-import prbale.com.androidmvpdemo.R;
-
 public class LoginPresenter implements LoginContract.Presenter {
   private LoginContract.View view;
   private LoginRepository repository;
 
+  /**
+   * Constructor
+   * @param view View with which this presenter is connected.
+   * @param repository Repository instance which will be responsible for business logic.
+   */
   public LoginPresenter(LoginContract.View view, LoginRepository repository) {
     this.view = view;
     this.repository = repository;
   }
 
-  @Override public void onLoginClicked() {
+  /**
+   * Method which will interact with repository for login process.
+   * It will get the username and password from view and pass it to repository.
+   */
+  @Override public void doLogin() {
     String username = view.getUsername();
     if (username.isEmpty()) {
-      view.showUsernameError(R.string.username_error);
+      view.showUsernameError();
       return;
     }
     String password = view.getPassword();
     if (password.isEmpty()) {
-      view.showPasswordError(R.string.password_error);
+      view.showPasswordError();
       return;
     }
     boolean loginSucceeded = repository.login(username, password);
@@ -27,8 +34,6 @@ public class LoginPresenter implements LoginContract.Presenter {
       view.startMainActivity();
       return;
     }
-    view.showLoginError(R.string.login_failed);
+    view.showLoginError();
   }
-
-
 }
