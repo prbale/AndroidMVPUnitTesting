@@ -3,12 +3,11 @@ package prbale.com.androidmvpdemo.login
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.activity_login.password
 import kotlinx.android.synthetic.main.activity_login.username
 import prbale.com.androidmvpdemo.R
 import prbale.com.androidmvpdemo.extension.launchHomeScreen
+import prbale.com.androidmvpdemo.extension.showLongToast
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
 
@@ -43,6 +42,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
   }
 
   override fun showLoginError() {
-    Toast.makeText(this, getString(R.string.error_msg_login_failed), LENGTH_SHORT).show()
+    showLongToast(getString(R.string.error_msg_login_failed))
   }
 }
