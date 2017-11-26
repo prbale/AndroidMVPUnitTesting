@@ -9,4 +9,4 @@ This project demonstrate the basic unit testing for MVP architecture.
 
 Please check the unit test cases for this.
 
-Kotlin version of this demo is available at https://github.com/prbale/AndroidMVPUnitTesting/tree/kotlin-demo
+Kotlin version of this demo is available at [kotlin-demo](https://github.com/prbale/AndroidMVPUnitTesting/tree/kotlin-demo/) 
