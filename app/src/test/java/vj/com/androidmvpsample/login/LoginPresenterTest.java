@@ -11,15 +11,15 @@ import prbale.com.androidmvpdemo.R;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by vivekjain on 5/31/15.
- */
 @RunWith(MockitoJUnitRunner.class)
 public class LoginPresenterTest {
+
   @Mock
-  private LoginContract view;
+  private LoginContract.View view;
+
   @Mock
   private LoginRepository service;
+
   private LoginPresenter presenter;
 
   @Before
@@ -31,24 +31,22 @@ public class LoginPresenterTest {
   public void shouldShowErrorMessageWhenUsernameIsEmpty() throws Exception {
     when(view.getUsername()).thenReturn("");
     presenter.doLogin();
-
-    verify(view).showUsernameError(R.string.username_error);
+    verify(view).showUsernameError();
   }
 
   @Test
   public void shouldShowErrorMessageWhenPasswordIsEmpty() throws Exception {
-    when(view.getUsername()).thenReturn("james");
+    when(view.getUsername()).thenReturn("prashant");
     when(view.getPassword()).thenReturn("");
     presenter.doLogin();
-
-    verify(view).showPasswordError(R.string.password_error);
+    verify(view).showPasswordError();
   }
 
   @Test
   public void shouldStartMainActivityWhenUsernameAndPasswordAreCorrect() throws Exception {
-    when(view.getUsername()).thenReturn("james");
-    when(view.getPassword()).thenReturn("bond");
-    when(service.login("james", "bond")).thenReturn(true);
+    when(view.getUsername()).thenReturn("prashant");
+    when(view.getPassword()).thenReturn("bale");
+    when(service.login("prashant", "bale")).thenReturn(true);
     presenter.doLogin();
 
     verify(view).startMainActivity();
@@ -56,11 +54,11 @@ public class LoginPresenterTest {
 
   @Test
   public void shouldShowLoginErrorWhenUsernameAndPasswordAreInvalid() throws Exception {
-    when(view.getUsername()).thenReturn("james");
-    when(view.getPassword()).thenReturn("bond");
-    when(service.login("james", "bond")).thenReturn(false);
+    when(view.getUsername()).thenReturn("prashant");
+    when(view.getPassword()).thenReturn("bale");
+    when(service.login("prashant1", "bale1")).thenReturn(false);
     presenter.doLogin();
 
-    verify(view).showLoginError(R.string.login_failed);
+    verify(view).showLoginError();
   }
 }

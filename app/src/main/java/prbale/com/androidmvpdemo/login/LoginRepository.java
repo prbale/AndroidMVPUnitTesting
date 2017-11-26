@@ -9,6 +9,6 @@ public class LoginRepository implements LoginContract.Repository {
    * @return true is credentials matches with the "test/test" else false.
    */
   @Override public boolean login(String username, String password) {
-    return "test".equals(username) && "test".equals(password);
+    return "prashant".equals(username) && "bale".equals(password);
   }
 }
