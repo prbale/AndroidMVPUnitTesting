@@ -2,13 +2,11 @@ package prbale.com.androidmvpdemo.login
 
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
-import org.mockito.runners.MockitoJUnitRunner
+import org.mockito.MockitoAnnotations
 
-@RunWith(MockitoJUnitRunner::class)
 class LoginPresenterTest {
 
   @Mock
@@ -20,8 +18,12 @@ class LoginPresenterTest {
   private lateinit var presenter: LoginPresenter
 
   @Before
-  @Throws(Exception::class)
   fun setUp() {
+
+    // Mockito has a very convenient way to inject mocks by using the @Mock annotation. To
+    // inject the mocks in the test the initMocks method needs to be called.
+    MockitoAnnotations.initMocks(this)
+
     presenter = LoginPresenter(view as LoginContract.View, service)
   }
 
